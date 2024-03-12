@@ -1,0 +1,23 @@
+{{#each profile as |post| }}
+{{#if @first}}
+<h2 id="tertiary-header">Posts by {{post.User.name}}</h2>
+{{/if}}
+{{/each}}
+
+{{#each profile as |post| }}
+    <div class="col mb-4 card">
+        <div class="row-md-5 mb-4">
+            <header>
+                <h3>
+                    <a href="/api/post/{{post.id}}">{{post.title}}</a>
+                </h3>
+                <p>Posted on {{format_date post.post_date}}</p>
+            </header>
+        </div>
+            <div class="col-md-7">
+                <p>
+                    {{post.content}}
+                </p>
+            </div>
+    </div>
+{{/each}}

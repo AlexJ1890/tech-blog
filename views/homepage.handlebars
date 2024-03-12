@@ -1,0 +1,18 @@
+<!-- Loop over each object in the post array -->
+{{#each homepage as |post| }}
+<div class="col mb-4 card">
+  <div class="row-md-5 ">
+    <header>
+      <h2>
+        <a href="api/post/{{post.id}}">{{post.title}}</a>
+      </h2>
+      <p>Created by <a href="/api/user/{{post.user_id}}">{{post.User.name}}</a> on {{format_date post.post_date}}</p>
+    </header>
+  </div>
+  <div class="row-md-7 p-2">
+    <p>
+      {{post.content}}
+    </p>
+  </div>
+</div>
+{{/each}}
